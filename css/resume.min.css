@@ -80,6 +80,7 @@ p.lead {
   display: block;
   margin-bottom: 10px;
   font-size: 1.2rem;
+  color: #fff !important;
 }
 
 .contact-icons a i {
@@ -99,7 +100,7 @@ p.lead {
 }
 
 .contact-icons a:hover {
-  color: white;
+  color: #ab59ff;
   text-decoration: none;
 }
 
@@ -184,6 +185,19 @@ section.resume-section .resume-item .resume-date {
   section.resume-section {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .contact-icons a i {
+    height: 1.5rem;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+    margin-right: 5px;
+  }
+  .contact-icons a {
+    font-size: 0.8rem;
   }
 }
 
