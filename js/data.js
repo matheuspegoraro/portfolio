@@ -36,12 +36,6 @@ const programmingLanguages = [
     experience: 'Básico - 3 meses'
   },
   {
-    icon: '<img src="img/rest.png" width="40">',
-    name: 'Arquitetura REST',
-    type: 'Linguagem de Programação',
-    experience: 'Intermediário - 2 anos'
-  },
-  {
     icon: `
       <span class="fa-stack fa-1x">
         <i class="fas fa-circle fa-stack-2x"></i>
@@ -50,6 +44,12 @@ const programmingLanguages = [
     name: 'Java',
     type: 'Linguagem de Programação',
     experience: 'Básico - 6 meses'
+  },
+  {
+    icon: '<img src="img/advpl.png" width="40">',
+    name: 'ADVPL',
+    type: 'Linguagem de Programação',
+    experience: 'Intermediário - 6 meses'
   },
 ];
 
@@ -110,7 +110,7 @@ const notProgramingLanguages = [
         <i class="fab fa-html5 fa-stack-1x fa-inverse"></i>
       </span>`,
     name: 'HTML 5',
-    type: 'Linguagem não programáveis',
+    type: 'Linguagem não programável',
     experience: 'Avançado - 3 anos'
   },
   {
@@ -120,8 +120,23 @@ const notProgramingLanguages = [
         <i class="fab fa-css3-alt fa-stack-1x fa-inverse"></i>
       </span>`,
     name: 'CSS 3',
-    type: 'Linguagem não programáveis',
+    type: 'Linguagem não programável',
     experience: 'Intermediário - 3 anos'
+  },
+];
+
+const architectures = [
+  {
+    icon: '<img src="img/rest.png" width="40">',
+    name: 'REST',
+    type: 'Arquitetura',
+    experience: 'Intermediário - 2 anos'
+  },
+  {
+    icon: '<img src="img/rest.png" width="40">',
+    name: 'RESTFUL',
+    type: 'Arquitetura',
+    experience: 'Intermediário - 2 anos'
   },
 ];
 
@@ -145,7 +160,7 @@ const tools = [
     name: 'NPM',
     type: 'Ferramenta',
     experience: 'Intermediário - 1 anos'
-  },
+  }
 ];
 
 const databases = [
@@ -170,6 +185,58 @@ const softwares = [
     type: 'Software',
     experience: 'Avançado - 5 anos'
   },
+  {
+    icon: '<img src="img/protheus.png" width="40">',
+    name: 'Protheus',
+    type: 'Software',
+    experience: 'Intermediário - 1 ano e 6 meses'
+  },
+];
+
+const courses = [
+  { name: "CRIE UMA CALCULADORA DE PINTURA COM C# - DEVMEDIA" },
+  { name: "AUTENTICAÇÃO NO ASP.NET MVC - DEVMEDIA" },
+  { name: "ASP.NET MVC E IDENTITY: AUTORIZAÇÃO DE USUÁRIOS COM CLAIMS - DEVMEDIA" },
+  { name: "MINHA PRIMEIRA APLICAÇÃO C# - DEVMEDIA" },
+  { name: "ASP.NET MVC E ENTITY FRAMEWORK: CRIANDO UMA APLICAÇÃO 1:N - DEVMEDIA" },
+  { name: "ENTITY FRAMEWORK MIGRATIONS - DEVMEDIA" },
+  { name: "MAPEAMENTO 1:N NO ENTITY FRAMEWORK - DEVMEDIA" },
+  { name: "PREPARANDO O AMBIENTE PARA PROGRAMAR EM .NET - DEVMEDIA" },
+  { name: "O QUE É NUGET? - DEVMEDIA" },
+  { name: "ASP.NET MVC: PRIMEIRA APLICAÇÃO COM O ENTITY FRAMEWORK - DEVMEDIA" },
+  { name: "O QUE É .NET? - DEVMEDIA" },
+  { name: "O QUE É C#? - DEVMEDIA" },
+  { name: "O QUE É ASP.NET WEB API? - DEVMEDIA" },
+  { name: "O QUE É ASP.NET MVC? - DEVMEDIA" },
+  { name: "ASP.NET MVC - DEVMEDIA" },
+  { name: "ENTITY FRAMEWORK: PRIMEIROS PASSOS - DEVMEDIA" },
+  { name: "CONSUMINDO UM SERVIÇO REST COM ASP.NET MVC - DEVMEDIA" },
+  { name: "CRIANDO SERVIÇOS RESTFUL EM .NET - DEVMEDIA" },
+  { name: "INTRODUÇÃO AO .NET FRAMEWORK - DEVMEDIA" },
+  { name: "INTRODUÇÃO A PROGRAMAÇÃO COM C# - DEVMEDIA" },
+  { name: "CONHECENDO OS RECURSOS DO VISUAL STUDIO - DEVMEDIA" },
+  { name: "O QUE É MVC? - DEVMEDIA" },
+  { name: "O QUE É RESTFUL? - DEVMEDIA" },
+  { name: "JAVA NETBEANS BÁSICO - UDEMY" },
+  { name: "JQUERY - UDEMY" },
+  { name: "PHP 7 Completo - UDEMY" },
+  { name: "ALGORITMOS - CURSOEMVIDEO" },
+  { name: "HTML5 - CURSOEMVIDEO" },
+  { name: "JAVA - CURSOEMVIDEO" },
+  { name: "MYSQL - CURSOEMVIDEO" },
+  { name: "PHP BÁSICO - CURSOEMVIDEO" },
+  { name: "PHP POO - CURSOEMVIDEO" }
+];
+
+const certifications = [
+  { name: "Inteligência Artificial Fundamentos - Data Science Academy" }
+];
+
+const lectures = [
+  { name: "12º CONGRESSO CIENTÍFICO - UNIARARAS" },
+  { name: "FRAMEWORK PARA DESENVOLVIMENTO WEB: DJANGO" },
+  { name: "MARKETING PESSOAL E MUDANÇAS EM TEMPO DE CRISE" },
+  { name: "ANÁLISE FORENSE COMPUTACIONAL: DETECTANDO ROOTKITS EM AMBIENTE WINDOWS" }
 ];
 
 $(() => {
@@ -184,6 +251,7 @@ $(() => {
   skills.push(...programmingLanguages.sort(compare));
   skills.push(...frameworks.sort(compare));
   skills.push(...notProgramingLanguages.sort(compare));
+  skills.push(...architectures.sort(compare));
   skills.push(...tools.sort(compare));
   skills.push(...databases.sort(compare));
   skills.push(...softwares.sort(compare));
@@ -197,5 +265,32 @@ $(() => {
         <td>${skill.experience}</td>
       </tr>
     `);
-  })
+  });
+
+  certifications.sort(compare).map(certification => {
+    $('.certifications-list').append(`
+      <li>
+        <i class="fa-li fa fa-trophy text-warning"></i>
+        ${certification.name} 
+      </li>
+    `);
+  });
+
+  courses.sort(compare).map(course => {
+    $('.courses-list').append(`
+      <li>
+        <i class="fa-li fa fa-book-reader text-warning"></i>
+        ${course.name} 
+      </li>
+    `);
+  });
+
+  lectures.sort(compare).map(lecture => {
+    $('.lectures-list').append(`
+      <li>
+        <i class="fa-li fa fa-book-reader text-warning"></i>
+        ${lecture.name} 
+      </li>
+    `);
+  });
 })

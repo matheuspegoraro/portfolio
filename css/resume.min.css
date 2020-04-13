@@ -76,6 +76,33 @@ p.lead {
   background-color: #ab59ff;
 }
 
+.contact-icons a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.contact-icons a i {
+  height: 2rem;
+  width: 2rem;
+  background-color: #ab59ff;
+  color: #fff !important;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-right: 1rem;
+}
+
+.contact-icons a:last-child {
+  margin-right: 0;
+}
+
+.contact-icons a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .dev-icons {
   font-size: 3rem;
 }
@@ -161,11 +188,11 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background: rgb(103,53,153);
-  background: -moz-linear-gradient(90deg, rgba(103,53,153,1) 0%, rgba(127,98,156,1) 83%, rgba(137,118,157,1) 100%);
+  background-color: rgb(103,53,153) !important;
+  /* background: -moz-linear-gradient(90deg, rgba(103,53,153,1) 0%, rgba(127,98,156,1) 83%, rgba(137,118,157,1) 100%);
   background: -webkit-linear-gradient(90deg, rgba(103,53,153,1) 0%, rgba(127,98,156,1) 83%, rgba(137,118,157,1) 100%);
   background: linear-gradient(90deg, rgba(103,53,153,1) 0%, rgba(127,98,156,1) 83%, rgba(137,118,157,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#673599",endColorstr="#89769d",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#673599",endColorstr="#89769d",GradientType=1); */
 }
 
 .text-primary {
@@ -183,6 +210,10 @@ section.resume-section .resume-item .resume-date {
 
 .arrow {
   font-size: 2.5rem;
+}
+
+.border-transparent {
+  border-color: transparent;
 }
 
 a {
