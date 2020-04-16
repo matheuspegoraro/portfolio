@@ -267,6 +267,10 @@ a:hover, a:focus, a:active {
     text-align: center !important;
   }
 
+  h1 {
+    font-size: 5rem;
+  }
+
   .img-mobile-profile {
     display: block;
     height: auto;
