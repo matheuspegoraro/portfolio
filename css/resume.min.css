@@ -252,6 +252,20 @@ a:hover, a:focus, a:active {
   width: 600px; 
 }
 
+@media (max-width: 650px) {
+  .img-slider {
+    max-height: 38rem;
+  }
+
+  .carousel-app {
+    width: 25rem; 
+  }
+  
+  .carousel-inner-app {
+    width: 400px; 
+  }
+}
+
 .carousel-centered {
   height: auto;
   margin: 0 auto;
