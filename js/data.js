@@ -330,7 +330,7 @@ $(() => {
     });
 
     $('.projects-list').append(`
-      <div class="carousel-container">
+      <div class="carousel-container mb-4">
         <h3>${project.name}</h3>
         <p class="text-non-bold">${project.description}</p>
         <div id="${project.id}" class="carousel slide ${isApp ? 'carousel-app' : ''} carousel-centered" data-ride="carousel">
