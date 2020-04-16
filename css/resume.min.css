@@ -268,7 +268,7 @@ a:hover, a:focus, a:active {
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 5rem !important;
   }
 
   .img-mobile-profile {
