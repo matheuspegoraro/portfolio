@@ -197,10 +197,6 @@ section.resume-section .resume-item .resume-date {
 
 .bg-primary {
   background-color: rgb(103,53,153) !important;
-  /* background: -moz-linear-gradient(90deg, rgba(103,53,153,1) 0%, rgba(127,98,156,1) 83%, rgba(137,118,157,1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(103,53,153,1) 0%, rgba(127,98,156,1) 83%, rgba(137,118,157,1) 100%);
-  background: linear-gradient(90deg, rgba(103,53,153,1) 0%, rgba(127,98,156,1) 83%, rgba(137,118,157,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#673599",endColorstr="#89769d",GradientType=1); */
 }
 
 .text-primary {
@@ -214,6 +210,10 @@ section.resume-section .resume-item .resume-date {
 
 .text-non-bold {
   font-weight: normal;
+}
+
+.img-mobile-profile {
+  display: none;
 }
 
 .table {
@@ -253,16 +253,37 @@ a:hover, a:focus, a:active {
 }
 
 @media (max-width: 650px) {
+  section.resume-section {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+    max-width: 100rem;
+  }
+
+  p {
+    text-align: justify;
+  } 
+
+  h1, h2, h3, h4, h5, h6, .resume-date, .subheading, .social-icons {
+    text-align: center !important;
+  }
+
+  .img-mobile-profile {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+  }
+
   .img-slider {
-    max-height: 38rem;
+    max-height: 30rem;
   }
 
   .carousel-app {
-    width: 25rem; 
+    width: 20rem; 
   }
   
   .carousel-inner-app {
-    width: 400px; 
+    width: 350px; 
   }
 }
 
