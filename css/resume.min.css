@@ -275,15 +275,15 @@ a:hover, a:focus, a:active {
   }
 
   .img-slider {
-    max-height: 30rem;
+    max-height: 28rem;
   }
 
   .carousel-app {
-    width: 20rem; 
+    width: 18.5rem; 
   }
   
   .carousel-inner-app {
-    width: 350px; 
+    width: 310px; 
   }
 }
 
