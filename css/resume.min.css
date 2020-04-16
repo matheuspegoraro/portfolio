@@ -218,6 +218,10 @@ section.resume-section .resume-item .resume-date {
   font-weight:bold!important
 }
 
+.text-non-bold {
+  font-weight: normal;
+}
+
 .table {
   font-size: 1.2rem;
 }

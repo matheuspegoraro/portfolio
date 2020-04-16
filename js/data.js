@@ -20,7 +20,7 @@ const programmingLanguages = [
     experience: 'Avançado - 2 anos'
   },
   {
-    icon: '<img src="img/dotnet.png" width="40">',
+    icon: '<img src="img/skills/dotnet.png" width="40">',
     name: '.NET FRAMEWORK - VB e C#',
     type: 'Linguagem de Programação',
     experience: 'Intermediário - 2 anos'
@@ -46,7 +46,7 @@ const programmingLanguages = [
     experience: 'Básico - 6 meses'
   },
   {
-    icon: '<img src="img/advpl.png" width="40">',
+    icon: '<img src="img/skills/advpl.png" width="40">',
     name: 'ADVPL',
     type: 'Linguagem de Programação',
     experience: 'Intermediário - 6 meses'
@@ -85,7 +85,7 @@ const frameworks = [
     experience: 'Avançado - 2 anos'
   },
   {
-    icon: '<img src="img/jquery.png" width="40">',
+    icon: '<img src="img/skills/jquery.png" width="40">',
     name: 'jQuery',
     type: 'Framework',
     experience: 'Avançado - 2 anos'
@@ -127,13 +127,13 @@ const notProgramingLanguages = [
 
 const architectures = [
   {
-    icon: '<img src="img/rest.png" width="40">',
+    icon: '<img src="img/skills/rest.png" width="40">',
     name: 'REST',
     type: 'Arquitetura',
     experience: 'Intermediário - 2 anos'
   },
   {
-    icon: '<img src="img/rest.png" width="40">',
+    icon: '<img src="img/skills/rest.png" width="40">',
     name: 'RESTFUL',
     type: 'Arquitetura',
     experience: 'Intermediário - 2 anos'
@@ -165,13 +165,13 @@ const tools = [
 
 const databases = [
   {
-    icon: '<img src="img/mysql.png" width="40">',
+    icon: '<img src="img/skills/mysql.png" width="40">',
     name: 'MySQL',
     type: 'Banco de Dados',
     experience: 'Intermediário - 3 anos'
   },
   {
-    icon: '<img src="img/sql-server.png" width="40">',
+    icon: '<img src="img/skills/sql-server.png" width="40">',
     name: 'SQLServer',
     type: 'Banco de Dados',
     experience: 'Intermediário - 2 anos'
@@ -180,13 +180,13 @@ const databases = [
 
 const softwares = [
   {
-    icon: '<img src="img/corel.png" width="40">',
+    icon: '<img src="img/skills/corel.png" width="40">',
     name: 'Corel Draw',
     type: 'Software',
     experience: 'Avançado - 5 anos'
   },
   {
-    icon: '<img src="img/protheus.png" width="40">',
+    icon: '<img src="img/skills/protheus.png" width="40">',
     name: 'Protheus',
     type: 'Software',
     experience: 'Intermediário - 1 ano e 6 meses'
@@ -238,6 +238,20 @@ const lectures = [
   { name: "MARKETING PESSOAL E MUDANÇAS EM TEMPO DE CRISE" },
   { name: "ANÁLISE FORENSE COMPUTACIONAL: DETECTANDO ROOTKITS EM AMBIENTE WINDOWS" }
 ];
+
+const projects = [
+  {
+    name: "Whoollie Food",
+    mockups: [
+      { name: "Tela de Login", path: "img/projects/whoollie01.png", active: "active" },
+      { name: "Dashboard com Gráficos", path: "img/projects/whoollie02.png", active: "" },
+      { name: "Controle de Produtos", path: "img/projects/whoollie03.png", active: "" },
+      { name: "Controle de Categorias de Produtos", path: "img/projects/whoollie04.png", active: "" },
+      { name: "Controle de Ingredientes", path: "img/projects/whoollie05.png", active: "" },
+      { name: "Monitor de Pedidos para Cozinha", path: "img/projects/whoollie06.png", active: "" }
+    ]
+  }
+]
 
 $(() => {
   function compare(a, b) {
@@ -293,4 +307,35 @@ $(() => {
       </li>
     `);
   });
+
+  projects.map(project => {
+
+    let imagesHTML = '';
+
+    project.mockups.map(mockup => {
+      imagesHTML += `
+        <div class="carousel-item ${mockup.active}">
+          <img class="d-block w-100" src="${mockup.path}" alt="${mockup.name}">
+        </div>
+      `;
+    });
+
+    $('.projects-list').append(`
+      <h3 class="w-100 text-center">${project.name}</h3>
+      <h6 class="w-100 text-center text-non-bold">Um Software para gerenciamento e administração de bares, restaurantes e lanchonetes de usabilidade ágil, proporcionando ao responsável do estabelecimento o controle sobre: o acesso de funcionários, edição do cardápio e monitoramento dos pedidos. Já o cliente tem uma plataforma mobile de autoatendimento intuitiva e interativa que também diminui o tempo de espera para o cliente ser atendimento</h6>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          ${imagesHTML}
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Voltar</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
+      </div>
+    `);
+  })
 })
