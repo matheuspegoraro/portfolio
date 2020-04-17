@@ -228,6 +228,10 @@ section.resume-section .resume-item .resume-date {
   border-color: transparent;
 }
 
+.text-non-justify {
+  text-align: left;
+}
+
 a {
   color: #ab59ff;
 }
@@ -259,16 +263,37 @@ a:hover, a:focus, a:active {
     max-width: 100rem;
   }
 
+  h1 {
+    font-size: 6rem !important;
+    line-height: 4.5rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-size: 1rem;
+  }
+
   p {
     text-align: justify;
   } 
 
-  h1, h2, h3, h4, h5, h6, .resume-date, .subheading, .social-icons {
-    text-align: center !important;
+  .arrow {
+    font-size: 1.2rem;
   }
 
-  h1 {
-    font-size: 5rem !important;
+  .resume-date {
+    font-size: 0.8rem;
+  }
+
+  .subheading {
+    font-size: 0.8rem;
+  }
+
+  h1, h2, h3, h4, h5, h6, .resume-date, .subheading, .social-icons {
+    text-align: center !important;
   }
 
   .img-mobile-profile {
