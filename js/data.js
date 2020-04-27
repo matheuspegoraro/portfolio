@@ -244,7 +244,26 @@ const projects = [
       { name: "Enviando o Carrinho para a Cozinha", path: "img/projects/whoollie-app07.png", active: "" },
       { name: "Listagem da Comanda Aberta com os Pedidos Realizados", path: "img/projects/whoollie-app06.png", active: "" },
     ]
-  }
+  },
+  {
+    id: 'omnistack10',
+    name: "Omnistack 10.0",
+    description: 'O DevRadar é um projeto que visa conectar desenvolvedores próximos a você que trabalham com as mesmas tecnologias.',
+    isApp: false,
+    mockups: [
+      { name: "Página Inicial", path: "img/projects/omni1001.png", active: "active" },
+    ]
+  },
+  {
+    id: 'omnistack10mobile',
+    name: "Omnistack 10.0 - MOBILE",
+    description: 'O DevRadar é um projeto que visa conectar desenvolvedores próximos a você que trabalham com as mesmas tecnologias.',
+    isApp: true,
+    mockups: [
+      { name: "Tela Inicial do Aplicativo", path: "img/projects/omni10-app01.png", active: "active" },
+      { name: "Webview do GitHub", path: "img/projects/omni10-app02.png", active: "" },
+    ]
+  },
 ]
 
 $(() => {
