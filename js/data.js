@@ -265,6 +265,10 @@ const projects = [
     id: 'omnistack10',
     name: "Omnistack 10.0",
     description: 'O DevRadar é um projeto que visa conectar desenvolvedores próximos a você que trabalham com as mesmas tecnologias.',
+    github: {
+      path: 'https://github.com/matheuspegoraro/semana-omnistack-10',
+      icon: 'fa-github'
+    },
     isApp: false,
     mockups: [
       { name: "Página Inicial", path: "img/projects/omni1001.png", active: "active" },
@@ -274,6 +278,10 @@ const projects = [
     id: 'omnistack10mobile',
     name: "Omnistack 10.0 - MOBILE",
     description: 'O DevRadar é um projeto que visa conectar desenvolvedores próximos a você que trabalham com as mesmas tecnologias.',
+    github: {
+      path: 'https://github.com/matheuspegoraro/semana-omnistack-10',
+      icon: 'fa-github'
+    },
     isApp: true,
     mockups: [
       { name: "Tela Inicial do Aplicativo", path: "img/projects/omni10-app01.png", active: "active" },
@@ -353,7 +361,7 @@ $(() => {
   projects.map(project => {
 
     let imagesHTML = '';
-
+    let carouselContainer = '';
     let isApp = project.isApp;
 
     project.mockups.map(mockup => {
@@ -364,28 +372,47 @@ $(() => {
       `;
     });
 
-    $('.projects-list').append(`
+    carouselContainer = `
       <div class="carousel-container mb-4">
         <h3>${project.name}</h3>
-        <p class="text-non-bold">${project.description}</p>
-        <p class="text-non-justify">
-          <i class="fab ${project.github.icon}"></i> GitHub: <a href='${project.github.path}' target='_blank'>${project.github.path}</a> <br>
-          <i class="fab ${project.youtube.icon}"></i> YouTube: <a href='${project.youtube.path}' target='_blank'>${project.youtube.path}</a>
-        </p>
+        <p class="text-non-bold">${project.description}</p>`;
+
+    if (typeof(project.github) !== "undefined" || typeof(project.youtube) !== "undefined") {
+      carouselContainer += `<p class="text-non-justify">`;
+
+      if (typeof(project.github) !== "undefined") {
+        carouselContainer += `<i class='fab ${project.github.icon}'></i> GitHub: <a href='${project.github.path}' target='_blank'>${project.github.path}</a> <br>`;
+      }
+      
+      if (typeof(project.youtube) !== "undefined") {
+        carouselContainer += `<i class="fab ${project.youtube.icon}"></i> YouTube: <a href='${project.youtube.path}' target='_blank'>${project.youtube.path}</a>`;
+      }
+
+      carouselContainer += `</p>`;
+    }
+
+    carouselContainer += `
         <div id="${project.id}" class="carousel slide ${isApp ? 'carousel-app' : ''} carousel-centered" data-ride="carousel">
           <div class="carousel-inner ${isApp ? 'carousel-inner-app' : ''}">
             ${imagesHTML}
-          </div>
-          <a class="carousel-control-prev" href="#${project.id}" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Voltar</span>
-          </a>
-          <a class="carousel-control-next" href="#${project.id}" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Próximo</span>
-          </a>
+          </div>`;
+
+    if (project.mockups.length > 1) {
+      carouselContainer += `
+        <a class="carousel-control-prev" href="#${project.id}" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Voltar</span>
+        </a>
+        <a class="carousel-control-next" href="#${project.id}" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>`;
+    }
+
+    carouselContainer += `
         </div>
-      </div>
-    `);
+      </div>`;
+
+    $('.projects-list').append(carouselContainer);
   })
 })
