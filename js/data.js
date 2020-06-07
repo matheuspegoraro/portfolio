@@ -288,6 +288,35 @@ const projects = [
       { name: "Webview do GitHub", path: "img/projects/omni10-app02.png", active: "" },
     ]
   },
+  {
+    id: 'nlw01',
+    name: "NLW 01",
+    description: 'O App Ecoleta foi a aplicação escolhida pela @Rocketseat para representar a primeira edição da NLW. Se trata de uma aplicação mobile e web que ajuda pessoas a encontrarem pontos de coleta de forma eficiente.',
+    github: {
+      path: 'https://github.com/matheuspegoraro/nlw-01',
+      icon: 'fa-github'
+    },
+    isApp: false,
+    mockups: [
+      { name: "Página Inicial", path: "img/projects/nlw-01.png", active: "active" },
+      { name: "Página De Cadastro de Ponto de Coleta", path: "img/projects/nlw-02.png" },
+    ]
+  },
+  {
+    id: 'nlw01mobile',
+    name: "NLW 01 - MOBILE",
+    description: 'O App Ecoleta foi a aplicação escolhida pela @Rocketseat para representar a primeira edição da NLW. Se trata de uma aplicação mobile e web que ajuda pessoas a encontrarem pontos de coleta de forma eficiente.',
+    github: {
+      path: 'https://github.com/matheuspegoraro/nlw-01',
+      icon: 'fa-github'
+    },
+    isApp: true,
+    mockups: [
+      { name: "Tela Inicial Do Aplicativo", path: "img/projects/nlw-app01.png", active: "active" },
+      { name: "Tela Do Mapa e De Filtro Dos Pontos", path: "img/projects/nlw-app02.png" },
+      { name: "Tela De Informações Dos Pontos", path: "img/projects/nlw-app03.png" },
+    ]
+  },
 ]
 
 $(() => {
