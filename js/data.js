@@ -18,7 +18,7 @@ const programmingLanguages = [
     icon: 'img/skills/dotnet.png',
     name: '.NET FRAMEWORK - VB e C#',
     type: 'Linguagem de Programação',
-    experience: 'Intermediário - 2 anos'
+    experience: 'Intermediário - 3 anos e 6 meses'
   },
   {
     iconType: 'icon',
@@ -104,7 +104,7 @@ const architectures = [
     icon: 'img/skills/rest.png',
     name: 'REST',
     type: 'Arquitetura',
-    experience: 'Intermediário - 2 anos'
+    experience: 'Intermediário - 3 anos'
   },
   {
     iconType: 'img',
@@ -145,7 +145,7 @@ const databases = [
     icon: 'img/skills/sql-server.png',
     name: 'SQLServer',
     type: 'Banco de Dados',
-    experience: 'Intermediário - 2 anos'
+    experience: 'Intermediário - 3 anos'
   },
 ];
 
