@@ -18,7 +18,7 @@ const programmingLanguages = [
     icon: 'img/skills/dotnet.png',
     name: '.NET FRAMEWORK - VB e C#',
     type: 'Linguagem de Programação',
-    experience: 'Intermediário - 3 anos e 6 meses'
+      experience: 'Avançado - 4 anos'
   },
   {
     iconType: 'icon',
@@ -49,7 +49,7 @@ const frameworks = [
     icon: 'fa-react',
     name: 'ReactJS',
     type: 'Framework',
-    experience: 'Intermediário - 1 ano'
+    experience: 'Intermediário - 2 ano'
   },
   {
     iconType: 'icon',
@@ -77,7 +77,7 @@ const frameworks = [
     icon: 'fa-bootstrap',
     name: 'Bootstrap Framework',
     type: 'Framework',
-    experience: 'Avançado - 2 anos'
+    experience: 'Avançado - 3 anos'
   },
 ];
 
@@ -87,7 +87,7 @@ const notProgramingLanguages = [
     icon: 'fa-html5',
     name: 'HTML 5',
     type: 'Linguagem não programável',
-    experience: 'Avançado - 3 anos'
+    experience: 'Avançado - 5 anos'
   },
   {
     iconType: 'icon',
@@ -123,13 +123,6 @@ const tools = [
     type: 'Ferramenta',
     experience: 'Intermediário - 1 anos'
   },
-  {
-    iconType: 'icon',
-    icon: 'fa-npm',
-    name: 'NPM',
-    type: 'Ferramenta',
-    experience: 'Intermediário - 1 anos'
-  }
 ];
 
 const databases = [
@@ -138,14 +131,14 @@ const databases = [
     icon: 'img/skills/mysql.png',
     name: 'MySQL',
     type: 'Banco de Dados',
-    experience: 'Intermediário - 3 anos'
+        experience: 'Avançado - 3 anos'
   },
   {
     iconType: 'img',
     icon: 'img/skills/sql-server.png',
     name: 'SQLServer',
     type: 'Banco de Dados',
-    experience: 'Intermediário - 3 anos'
+      experience: 'Avançado - 4 anos'
   },
 ];
 
