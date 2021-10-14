@@ -346,8 +346,8 @@ $(() => {
     $('.skills-list').append(`
       <tr>
         <td class="text-primary text-center">${getIcon(skill.iconType, skill.icon)}</td>
-        <td>${skill.type}</td>
         <td class="text-bold">${skill.name}</td>
+        <td>${skill.type}</td>
         <td>${skill.experience}</td>
       </tr>
     `);
