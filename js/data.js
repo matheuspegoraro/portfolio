@@ -16,9 +16,16 @@ const programmingLanguages = [
   {
     iconType: 'img',
     icon: 'img/skills/dotnet.png',
-    name: '.NET FRAMEWORK - VB e C#',
+    name: '.NET Core 3.1, 5 e 6',
     type: 'Linguagem de Programação',
       experience: 'Avançado - 4 anos'
+  },
+  {
+    iconType: 'img',
+    icon: 'img/skills/dotnet.png',
+    name: '.NET FRAMEWORK - VB e C#',
+    type: 'Linguagem de Programação',
+      experience: 'Avançado - 6 anos'
   },
   {
     iconType: 'icon',
@@ -49,14 +56,21 @@ const frameworks = [
     icon: 'fa-react',
     name: 'ReactJS',
     type: 'Framework',
-    experience: 'Intermediário - 2 ano'
+    experience: 'Avançado - 3 anos'
+  },
+  {
+    iconType: 'icon',
+    icon: 'fa-react',
+    name: 'NextJS',
+    type: 'Framework',
+    experience: 'Avançado - 1 ano'
   },
   {
     iconType: 'icon',
     icon: 'fa-react',
     name: 'React Native',
     type: 'Framework',
-    experience: 'Intermediário - 6 meses'
+    experience: 'Avançado - 1 ano e 6 meses'
   },
   {
     iconType: 'icon',
@@ -71,13 +85,6 @@ const frameworks = [
     name: 'jQuery',
     type: 'Framework',
     experience: 'Avançado - 2 anos'
-  },
-  {
-    iconType: 'icon',
-    icon: 'fa-bootstrap',
-    name: 'Bootstrap Framework',
-    type: 'Framework',
-    experience: 'Avançado - 3 anos'
   },
 ];
 
@@ -143,13 +150,6 @@ const databases = [
 ];
 
 const softwares = [
-  {
-    iconType: 'img',
-    icon: 'img/skills/corel.png',
-    name: 'Corel Draw',
-    type: 'Software',
-    experience: 'Avançado - 5 anos'
-  },
   {
     iconType: 'img',
     icon: 'img/skills/protheus.png',
