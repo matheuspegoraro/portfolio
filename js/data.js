@@ -4,21 +4,21 @@ const programmingLanguages = [
     icon: 'fa-js',
     type: 'Programming language',
     name: 'JavaScript',
-    experience: 'Advanced - 4 years'
+    experience: 'Advanced - 5 years'
   },
   {
     iconType: 'icon',
     icon: 'fa-php',
     name: 'PHP 7 and 8',
     type: 'Programming language',
-    experience: 'Advanced - 3 years'
+    experience: 'Advanced - 4 years'
   },
   {
     iconType: 'img',
     icon: 'img/skills/dotnet.png',
     name: '.NET Core 3.1, 5, 6 and 8',
     type: 'Programming language',
-      experience: 'Advanced - 4 years'
+      experience: 'Advanced - 5 years'
   },
   {
     iconType: 'img',
@@ -32,14 +32,14 @@ const programmingLanguages = [
     icon: 'fa-python',
     name: 'Python 3',
     type: 'Programming language',
-    experience: 'Básico - 3 months'
+    experience: 'Basic - 3 months'
   },
   {
     iconType: 'icon',
     icon: 'fa-java',
     name: 'Java',
     type: 'Programming language',
-    experience: 'Básico - 6 months'
+    experience: 'Basic - 6 months'
   },
   {
     iconType: 'img',
@@ -63,14 +63,21 @@ const frameworks = [
     icon: 'fa-react',
     name: 'NextJS',
     type: 'Framework',
-    experience: 'Advanced - 2 year'
+    experience: 'Advanced - 3 year'
   },
   {
     iconType: 'icon',
     icon: 'fa-react',
     name: 'React Native',
     type: 'Framework',
-    experience: 'Advanced - 3 months'
+    experience: 'Advanced - 2 years'
+  },
+  {
+    iconType: 'icon',
+    icon: 'fa-node-js',
+    name: 'NodeJS',
+    type: 'Framework',
+    experience: 'Intermediary - 3 year'
   },
   {
     iconType: 'icon',
@@ -100,14 +107,14 @@ const notProgramingLanguages = [
     iconType: 'icon',
     icon: 'fa-html5',
     name: 'HTML 5',
-    type: 'Linguagem não programável',
+    type: '-',
     experience: 'Advanced - 6 years'
   },
   {
     iconType: 'icon',
     icon: 'fa-css3-alt',
     name: 'CSS 3',
-    type: 'Linguagem não programável',
+    type: '-',
     experience: 'Intermediary - 5 years'
   },
 ];
@@ -130,13 +137,7 @@ const architectures = [
 ];
 
 const tools = [
-  {
-    iconType: 'icon',
-    icon: 'fa-node-js',
-    name: 'NodeJS',
-    type: 'Ferramenta',
-    experience: 'Intermediary - 2 year'
-  },
+  
 ];
 
 const databases = [
