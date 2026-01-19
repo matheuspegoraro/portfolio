@@ -1,0 +1,7 @@
+/* About */
+.about-content {
+  font-size: 1.05em;
+  color: var(--secondary);
+  max-width: 900px;
+  line-height: 1.7;
+}

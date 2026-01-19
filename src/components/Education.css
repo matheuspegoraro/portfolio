@@ -1,0 +1,37 @@
+/* Education */
+.education-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.education-item {
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border);
+}
+
+.education-item:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent);
+  transform: translateX(6px);
+}
+
+.education-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.institution {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 0.95em;
+}
+
+.education-date {
+  color: var(--secondary);
+  font-size: 0.9em;
+}

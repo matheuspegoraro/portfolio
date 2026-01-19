@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus Pegoraro - Senior Full Stack Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ffffff;
+            --secondary: #a1a1aa;
+            --accent: #3b82f6;
+            --bg: #0a0a0a;
+            --bg-secondary: #18181b;
+            --bg-tertiary: #27272a;
+            --border: #3f3f46;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        }
+
+        .profile-section {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 2.8em;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 1.2em;
+            color: var(--secondary);
+            font-weight: 400;
+            margin-bottom: 6px;
+        }
+
+        .location {
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95em;
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+        }
+
+        .contact-item:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            font-size: 0.9em;
+        }
+
+        /* Section */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .section-number {
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* About */
+        .about-content {
+            font-size: 1.05em;
+            color: var(--secondary);
+            max-width: 900px;
+            line-height: 1.7;
+        }
+
+        /* Experience */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+        }
+
+        .timeline-item:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 26px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg);
+            box-shadow: 0 0 0 2px var(--border);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+            gap: 20px;
+        }
+
+        .job-title {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .company {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .date {
+            color: var(--secondary);
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .job-description {
+            margin-top: 12px;
+        }
+
+        .job-description li {
+            color: var(--secondary);
+            margin-bottom: 6px;
+            padding-left: 8px;
+            font-size: 0.95em;
+        }
+
+        /* Skills */
+        .skills-section {
+            display: grid;
+            gap: 24px;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-category:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--accent);
+        }
+
+        .category-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill {
+            padding: 6px 14px;
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+            color: var(--secondary);
+        }
+
+        .skill:hover {
+            background: var(--bg);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .education-item {
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+        }
+
+        .education-item:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        .education-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .institution {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 0.95em;
+        }
+
+        .education-date {
+            color: var(--secondary);
+            font-size: 0.9em;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--secondary);
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: start;
+                gap: 24px;
+            }
+
+            .name {
+                font-size: 2.2em;
+            }
+
+            .title {
+                font-size: 1.1em;
+            }
+
+            .contact-grid {
+                width: 100%;
+            }
+
+            .contact-item {
+                flex: 1;
+                min-width: calc(50% - 6px);
+                justify-content: center;
+            }
+
+            .timeline {
+                padding-left: 20px;
+            }
+
+            .timeline-item::before {
+                left: -27px;
+            }
+
+            .job-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            section {
+                padding: 30px 0;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="profile-section">
+                    <h1 class="name">Matheus Pegoraro</h1>
+                    <p class="title">Senior Full Stack Developer</p>
+                    <p class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Limeira, São Paulo, Brazil
+                    </p>
+                </div>
+                
+                <div class="contact-grid">
+                    <a href="mailto:matheuspegoraro2017@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="tel:+5519989709625" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+55 19 98970-9625</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/matheus-pegoraro/" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://matheuspegoraro.github.io/portfolio/" target="_blank" class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section id="about">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                I am a technology enthusiast with over 7 years of experience in building robust and scalable solutions. Since 2017, I have worked with various technologies, but I found my true calling in development using the .NET, ReactJS, and React Native stack. Throughout my career, I have had the opportunity to work on challenging projects, both on the backend and frontend, creating innovative solutions that meet business and user needs.
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Senior Full Stack Developer</h3>
+                            <p class="company">Fully Ecosystem</p>
+                        </div>
+                        <span class="date">May 2023 - Present</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Led the development and maintenance of various health applications, integrating third-party SDKs and implementing custom features</li>
+                        <li>Managed maintenance of a PHP portal using Laravel, Bootstrap, and PostgreSQL</li>
+                        <li>Developed a health application in Kotlin and Swift, integrating third-party SDKs and implementing native features</li>
+                        <li>Transformed the application into a white-label solution, enabling customizations for multiple clients</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Senior Full Stack Developer</h3>
+                            <p class="company">epharma PBM phygital</p>
+                        </div>
+                        <span class="date">Sep 2022 - May 2023</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Implemented a service to periodically generate reports for an FTP server</li>
+                        <li>Optimized SQL queries and procedures to improve performance</li>
+                        <li>Developed and maintained a patient monitoring platform, handling database design, pipelines, backend, frontend, and deployments on Azure DevOps</li>
+                        <li>Implemented a white-label profiling platform for monitoring patients using new drugs</li>
+                        <li>Contributed to a store rating increase of over 1.0 point (Play Store and Apple Store)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Senior Full Stack Developer</h3>
+                            <p class="company">Mazzatech Systems & Outsourcing</p>
+                        </div>
+                        <span class="date">May 2021 - Sep 2022</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Outsourced by ePharma - Same responsibilities as above position</li>
+                        <li>Implemented a service to periodically generate reports for an FTP server</li>
+                        <li>Optimized SQL queries and procedures to improve performance</li>
+                        <li>Developed and maintained patient monitoring platforms with full-stack responsibilities</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Full Stack Developer</h3>
+                            <p class="company">Data System</p>
+                        </div>
+                        <span class="date">Sep 2020 - May 2021</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Implementation and maintenance of an ERP system using WCF, WPF and Telerik</li>
+                        <li>Migration of WCF services to API using .NET Core for the first time in the company</li>
+                        <li>Implementation of Redis Server, increasing system login performance by more than 60%</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">.NET Developer</h3>
+                            <p class="company">BGL - Bertoloto & Grotta</p>
+                        </div>
+                        <span class="date">Oct 2018 - Sep 2020</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Worked on requirements gathering, business modeling, development, deployment and training of application users</li>
+                        <li>Transformed many Excel systems into inter-integrated web systems</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">PHP Web Developer</h3>
+                            <p class="company">ACTLOC</p>
+                        </div>
+                        <span class="date">Sep 2017 - Sep 2018</span>
+                    </div>
+                    <ul class="job-description">
+                        <li>Development and maintenance of a web portal in PHP, Bootstrap and MySQL</li>
+                        <li>Worked on refactoring and improving the code</li>
+                        <li>Made integrations with Google Calendar</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="skills-section">
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-server"></i>
+                        Backend
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill">.NET Core</div>
+                        <div class="skill">C#</div>
+                        <div class="skill">NestJS</div>
+                        <div class="skill">Node.js</div>
+                        <div class="skill">PHP</div>
+                        <div class="skill">Laravel</div>
+                        <div class="skill">WCF</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-desktop"></i>
+                        Frontend & Mobile
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill">React.js</div>
+                        <div class="skill">React Native</div>
+                        <div class="skill">TypeScript</div>
+                        <div class="skill">JavaScript</div>
+                        <div class="skill">WPF</div>
+                        <div class="skill">Bootstrap</div>
+                        <div class="skill">Telerik</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fab fa-android"></i>
+                        Native Mobile
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill">Kotlin</div>
+                        <div class="skill">Swift</div>
+                        <div class="skill">Android SDK</div>
+                        <div class="skill">iOS SDK</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-database"></i>
+                        Database & Cache
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill">SQL Server</div>
+                        <div class="skill">PostgreSQL</div>
+                        <div class="skill">MySQL</div>
+                        <div class="skill">Redis</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-cloud"></i>
+                        DevOps & Tools
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill">Azure DevOps</div>
+                        <div class="skill">Git</div>
+                        <div class="skill">CI/CD</div>
+                        <div class="skill">Docker</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="education-grid">
+                <div class="education-item">
+                    <h3 class="education-title">Bachelor's Degree in Information Systems</h3>
+                    <p class="institution">Centro Universitário Hermínio Ometto - FHO|Uniararas</p>
+                    <p class="education-date">2017 - 2020</p>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="education-title">Industrial Automation Technician</h3>
+                    <p class="institution">FIEL | Faculdade Integrada Einstein Limeira</p>
+                    <p class="education-date">2014 - 2015</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Matheus Pegoraro. Built with passion for clean code.</p>
+        </footer>
+    </div>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.05}s`;
+        });
+    </script>
+</body>
+</html>
